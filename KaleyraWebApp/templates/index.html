@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Theme Made By www.w3schools.com -->
+    <title>hi-Tech Relief</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#myPage">hi-Tech Relief</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#history">HISTORY</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron text-center" style="background: linear-gradient(45deg, rgba(179,169,170,0.8), rgba(47,54,64,0.8)), url({{ url_for('static', filename='img/header.png') }});      background-repeat: no-repeat;
+      background-size: cover;">
+    <h1>hi-Tech Relief</h1>
+    <p>Identify hazards, reduce risk and stay informed when you need it most</p>
+    <form>
+
+        <div class="col-xs-offset-3 col-xs-6 col-md-offset-4 col-md-4">
+            <div class="input-group">
+                <input type="text" class="form-control" size="50" placeholder="Search.." required>
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-search"><span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+    <h2>SERVICES</h2>
+    <span class="section-divider"></span>
+    <h5>What we offer</h5>
+    <br>
+    <div class="row slideanim">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-envelope logo-small"></span>
+            <h4>Messages</h4>
+            <p>Send messages to other opeople</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-earphone logo-small"></span>
+            <h4>Call</h4>
+            <p>Directly call other people</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="	glyphicon glyphicon-bullhorn logo-small"></span>
+            <h4>Broadcast</h4>
+            <p>Broadcast distress signals</p>
+        </div>
+    </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div class="container-fluid text-center bg-grey">
+</div>
+
+<!-- Container (Services Section) -->
+<div id="history" class="container-fluid text-center">
+    <h2>History</h2>
+    <span class="section-divider"></span>
+    <h5>Conversation & call history</h5>
+    <br>
+    <div class="container">
+        <table class="table table-striped table-bordered table-hover" id="historytable">
+            <thead align="justify">
+            <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Service Type</th>
+            <th>Time</th>
+            </tr>
+
+            </thead>
+            <tbody align="left">
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<!-- Container (Chat section) -->
+
+<!-- Trigger the modal with a button -->
+<button type="button" class="open-button" id="openChat" data-toggle="modal" data-target="#myModal">Reach out</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal" role="dialog">
+    <div class="modal-dialog" style="margin-top:100px;">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+
+
+                <form class="form-container">
+                    <h5><b>Contacts</b></h5>
+                    <h6>Begin by selecting a contact to message/call hassle free.</h6>
+                    <br>
+                    <div class="list-group">
+                    </div>
+                    <label for="msg"><b>Message</b></label>
+                    <textarea placeholder="Type message.." name="msg" id="message" required></textarea>
+
+                    <button type="button" class="btn" id="sendMessage">Send</button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Broadcast Modal -->
+<div id="myModalBroadcast" class="modal" role="dialog">
+    <div class="modal-dialog" style="max-height:85%;  margin-top: 70px; margin-bottom:50px;">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+
+                <form class="form-container">
+                    <label for="msg"><b>Broadcast Message</b></label>
+                    <textarea placeholder="Type message.." name="msg" id="bdcastMsg" required></textarea>
+
+                    <button type="button" class="btn" id="broadcastMsg">Send</button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Icon bar -->
+<div class="icon-bar-social">
+    <a class="notification" id="notify"><span class="glyphicon glyphicon-bell bell"></span></a>
+    <a data-toggle="modal" data-target="#myModalBroadcast" class="broadcast"><span
+            class="glyphicon glyphicon-bullhorn"></span></a>
+</div>
+
+
+<div class="myAlert-bottom alert alert-info" style="display:none;
+    position: fixed;
+    top: 80px;
+    right:1%;
+    width: 50%;">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Akash</strong> has a message for you.
+</div>
+<div class="myAlert-bottom1 alert alert-warning" style="display:none;
+    position: fixed;
+    top: 170px;
+    right:1%;
+    width: 50%;">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Sonali</strong> has made a voice call to you.
+</div>
+
+<div class="myAlert-bottom2 alert alert-danger" style="display:none;
+    position: fixed;
+    top: 260px;
+    right:1%;
+    width: 50%;">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>New Broadcast message</strong> by Rachel.
+</div>
+
+
+<footer class="container-fluid-footer text-center">
+    <a href="#myPage" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    <p style="color:#fff;">Developed by Kaleyra</p>
+</footer>
+</body>
+</html>

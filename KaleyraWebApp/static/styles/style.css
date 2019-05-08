@@ -1,0 +1,402 @@
+body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    color:#494e5a;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  .jumbotron {
+    color: #fff;
+    padding: 300px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .number{
+  margin-left:20px;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+    background-color:#fff
+  }
+  .container-fluid-footer {
+    padding: 60px 50px;
+    background-color: #353b48;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #82ccdd;
+    font-size: 50px;
+  }
+  .logo {
+    color: #0a3d62;
+    font-size: 200px;
+  }
+ .section-divider {
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: #00539e;
+    background-color: rgba(113, 128, 147,1.0);
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+  .navbar {
+    margin-bottom: 0;
+    background-color:#353b48;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover{
+    color: #718093 !important;
+    background-color: #fff !important;
+  }
+  .navbar-nav li.active a{
+    color: #FFF !important;
+    background-color: #353b48 !important;
+  }
+  .navbar-default .navbar-toggle {
+    background-color:transparent;
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #B3A9AA;
+  }
+  .btn-search{
+  color: #fff;
+  background-color:#82ccdd;
+  }
+  .btn-search:hover {
+  opacity:0.8;
+  color:white;
+}
+  .btn-search:active {
+  color: #fff;
+  background-color:#0a3d62;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color:#82ccdd;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+@media screen and (max-width: 480px) {
+    .open-button {
+        width: 100px;
+        height:100px;
+        bottom: 23px;
+        right: 20px;
+        border-radius:50%;
+    }
+  }
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  overflow: scroll;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 1000px;
+  max-height: 800px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 100px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #0fb9b1;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: #e55039;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+/*
+.list-group .active{
+background-color:#3c6382;
+}
+.list-group .active:hover{
+background-color:#3c6382;
+}
+.list-group-item:active{
+background-color:#dfe4ea;
+*/
+}
+
+
+/*.myAlert-bottom{
+    position: fixed;
+    bottom: 5px;
+    left:2%;
+    width: 96%;
+}
+
+
+.alert{
+    display: none;
+}*/
+.modal{
+    display: block !important; /* I added this to see the modal, you don't need this */
+}
+
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 70%;
+    overflow-y: auto;
+}
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #20bf6b;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right:10px;
+  margin-right:10px;
+}
+.listIcon {
+color:#ff9f43;
+float: right;
+margin-top: 4px;
+margin-right: -6px;
+cursor:pointer;
+}
+.icon-bar-social {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor:pointer;
+}
+
+.icon-bar-social a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar-social a:hover {
+  opacity:0.8;
+}
+
+.notification {
+  background: #ff6961;
+  color: white;
+}
+
+.broadcast {
+  background: #b8e994;
+  color: white;
+}
+.bell{
+  -webkit-animation: ring 4s .7s ease-in-out infinite;
+  -webkit-transform-origin: 50% 4px;
+  -moz-animation: ring 4s .7s ease-in-out infinite;
+  -moz-transform-origin: 50% 4px;
+  animation: ring 4s .7s ease-in-out infinite;
+  transform-origin: 50% 4px;
+}
+
+@-webkit-keyframes ring {
+  0% { -webkit-transform: rotateZ(0); }
+  1% { -webkit-transform: rotateZ(30deg); }
+  3% { -webkit-transform: rotateZ(-28deg); }
+  5% { -webkit-transform: rotateZ(34deg); }
+  7% { -webkit-transform: rotateZ(-32deg); }
+  9% { -webkit-transform: rotateZ(30deg); }
+  11% { -webkit-transform: rotateZ(-28deg); }
+  13% { -webkit-transform: rotateZ(26deg); }
+  15% { -webkit-transform: rotateZ(-24deg); }
+  17% { -webkit-transform: rotateZ(22deg); }
+  19% { -webkit-transform: rotateZ(-20deg); }
+  21% { -webkit-transform: rotateZ(18deg); }
+  23% { -webkit-transform: rotateZ(-16deg); }
+  25% { -webkit-transform: rotateZ(14deg); }
+  27% { -webkit-transform: rotateZ(-12deg); }
+  29% { -webkit-transform: rotateZ(10deg); }
+  31% { -webkit-transform: rotateZ(-8deg); }
+  33% { -webkit-transform: rotateZ(6deg); }
+  35% { -webkit-transform: rotateZ(-4deg); }
+  37% { -webkit-transform: rotateZ(2deg); }
+  39% { -webkit-transform: rotateZ(-1deg); }
+  41% { -webkit-transform: rotateZ(1deg); }
+
+  43% { -webkit-transform: rotateZ(0); }
+  100% { -webkit-transform: rotateZ(0); }
+}
+
+@-moz-keyframes ring {
+  0% { -moz-transform: rotate(0); }
+  1% { -moz-transform: rotate(30deg); }
+  3% { -moz-transform: rotate(-28deg); }
+  5% { -moz-transform: rotate(34deg); }
+  7% { -moz-transform: rotate(-32deg); }
+  9% { -moz-transform: rotate(30deg); }
+  11% { -moz-transform: rotate(-28deg); }
+  13% { -moz-transform: rotate(26deg); }
+  15% { -moz-transform: rotate(-24deg); }
+  17% { -moz-transform: rotate(22deg); }
+  19% { -moz-transform: rotate(-20deg); }
+  21% { -moz-transform: rotate(18deg); }
+  23% { -moz-transform: rotate(-16deg); }
+  25% { -moz-transform: rotate(14deg); }
+  27% { -moz-transform: rotate(-12deg); }
+  29% { -moz-transform: rotate(10deg); }
+  31% { -moz-transform: rotate(-8deg); }
+  33% { -moz-transform: rotate(6deg); }
+  35% { -moz-transform: rotate(-4deg); }
+  37% { -moz-transform: rotate(2deg); }
+  39% { -moz-transform: rotate(-1deg); }
+  41% { -moz-transform: rotate(1deg); }
+
+  43% { -moz-transform: rotate(0); }
+  100% { -moz-transform: rotate(0); }
+}
+
+@keyframes ring {
+  0% { transform: rotate(0); }
+  1% { transform: rotate(30deg); }
+  3% { transform: rotate(-28deg); }
+  5% { transform: rotate(34deg); }
+  7% { transform: rotate(-32deg); }
+  9% { transform: rotate(30deg); }
+  11% { transform: rotate(-28deg); }
+  13% { transform: rotate(26deg); }
+  15% { transform: rotate(-24deg); }
+  17% { transform: rotate(22deg); }
+  19% { transform: rotate(-20deg); }
+  21% { transform: rotate(18deg); }
+  23% { transform: rotate(-16deg); }
+  25% { transform: rotate(14deg); }
+  27% { transform: rotate(-12deg); }
+  29% { transform: rotate(10deg); }
+  31% { transform: rotate(-8deg); }
+  33% { transform: rotate(6deg); }
+  35% { transform: rotate(-4deg); }
+  37% { transform: rotate(2deg); }
+  39% { transform: rotate(-1deg); }
+  41% { transform: rotate(1deg); }
+
+  43% { transform: rotate(0); }
+  100% { transform: rotate(0); }
+}
+
